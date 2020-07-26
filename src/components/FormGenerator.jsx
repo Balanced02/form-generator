@@ -9,6 +9,23 @@ import Button from "./Button";
  * @param {obj} selectLists
  * @param {bool} loading
  * @param {obj} defaultFormValues
+ * Sample detailed object for an input field
+ * {
+ *    name: "classYear",
+ *    label: "Select Class",
+ *    required: true,
+ *    type: "select",
+ *    clearFieldsOnChange: ["subject"], // clear fields with this name when this input changes
+ *    callFunctionOnChange: (e) => { // call this function anytime this input changes
+ *      let value;
+ *      if (e.target.type === "custom") {
+ *        value = e.target.value.value;
+ *      } else {
+ *        value = e.target.value;
+ *      }
+ *      console.log(value)
+ *    },
+ *  },
  */
 
 const FormGenerator = React.forwardRef(
