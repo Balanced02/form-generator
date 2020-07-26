@@ -87,15 +87,6 @@ const FormGenerator = React.forwardRef(
           isError = true;
         }
         if (
-          form.type === "draft" &&
-          form.required &&
-          state[form.name] &&
-          !state[form.name].getCurrentContent().hasText()
-        ) {
-          errorMessage[form.name] = `Please provide value for ${form.label}`;
-          isError = true;
-        }
-        if (
           form.required &&
           form.type === "select" &&
           form.multiple &&
